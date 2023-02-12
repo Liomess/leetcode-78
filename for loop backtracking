@@ -1,0 +1,13 @@
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        def solve(self,i,arr,ss,ps):
+            ps.append(ss)
+            for j in range(i,len(arr)):
+                ss.append(arr[j])
+                solve(self,j+1,arr,list(ss),ps)
+                ss.pop()
+        ps=[]
+        ss=[]
+        solve(self,0,nums,ss,ps)
+        return ps
+        
