@@ -1,0 +1,16 @@
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        def solve(self,index,arr,ss,ps):
+            if index==len(arr):
+                ps.append(ss)
+            else:
+
+                ss.append(arr[index])
+                solve(self,index+1,arr,list(ss),ps)
+                ss.pop()
+                solve(self,index+1,arr,list(ss),ps)
+            
+        ps=[]
+        ss=[]
+        solve(self,0,nums,ss,ps)
+        return ps
